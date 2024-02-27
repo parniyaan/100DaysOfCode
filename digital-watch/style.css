@@ -1,0 +1,24 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #333333;
+    box-sizing: border-box;
+
+
+    span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 1000px;
+        height: 200px;
+        font-size: 220px;
+        font-weight: 900;
+        font-family: Ubuntu, sans-serif;
+        color: #000;
+        background-image: linear-gradient(to right ,royalblue,pink);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}

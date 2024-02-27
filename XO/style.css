@@ -1,0 +1,69 @@
+body {
+    height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    #winner {
+        font-size: 20px;
+    }
+
+    .cells {
+
+        width: 600px;
+        height: 600px;
+        margin-top: 80px;
+        display: grid;
+        grid-template-columns: repeat(3, 200px);
+        grid-template-rows: repeat(3, 200px);
+
+        .cell {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid black;
+            background-repeat: no-repeat;
+            background-size: 50%;
+            background-position: center;
+
+            &.x {
+                background-image: url("./icons/x-light.svg");
+            }
+
+            &.o {
+                background-image: url("./icons/o-light.svg");
+            }
+        }
+
+        .top-left,
+        .top-right,
+        .top-middle {
+            border-top: none;
+        }
+
+        .top-right,
+        .middle-right,
+        .bottom-right {
+            border-right: none;
+        }
+
+        .bottom-right,
+        .bottom-middle,
+        .bottom-left{
+            border-bottom: none;
+        }
+
+        .middle-left,
+        .bottom-left,
+        .top-left {
+            border-left: none;
+        }
+
+    }
+
+    svg {
+        width: 100px;
+        height: 100px;
+    }
+}
