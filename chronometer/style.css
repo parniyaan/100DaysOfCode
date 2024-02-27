@@ -1,0 +1,46 @@
+body {
+    height: 100vh;
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .chronometer {
+        display: flex;
+        flex-direction: column;
+
+        .time {
+            display: flex;
+            justify-content: space-between;
+            width: 600px;
+            height: 200px;
+            border: 2px solid black;
+
+
+            div {
+                width: 180px;
+                font-size: 30px;
+                color: black;
+            }
+        }
+
+        .buttons {
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+
+            button {
+                width: 180px;
+                height: 70px;
+                border: none;
+                border-radius: 10px;
+                font-size: 22px;
+                color: white;
+                background-color: royalblue;
+                cursor: pointer;
+
+            }
+        }
+    }
+    }

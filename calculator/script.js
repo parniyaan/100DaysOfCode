@@ -106,7 +106,6 @@ digitButtons.forEach((button) => {
     button.addEventListener('click', digitHandler);
 });
 
-// calculation.addEventListener('input',displayCalculation);
 
 operatorButtons.forEach((button) => {
     let handler;
