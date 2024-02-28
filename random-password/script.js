@@ -27,12 +27,9 @@ function generatePassword() {
     const char = [];
 
     for (let key in config) {
-        console.log(key, config[key])
-
-
 
         if (config[key]) {
-            char.push(characters[key])
+            char.push(characters[key]);
         }
     }
 

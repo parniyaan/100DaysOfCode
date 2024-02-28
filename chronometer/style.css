@@ -10,19 +10,14 @@ body {
         display: flex;
         flex-direction: column;
 
-        .time {
+        #display {
             display: flex;
-            justify-content: space-between;
+            align-items: center;
+            justify-content: center;
             width: 600px;
             height: 200px;
-            border: 2px solid black;
-
-
-            div {
-                width: 180px;
-                font-size: 30px;
-                color: black;
-            }
+            font-size: 110px;
+            color: #000;
         }
 
         .buttons {
@@ -42,5 +37,6 @@ body {
 
             }
         }
+
     }
-    }
+}
