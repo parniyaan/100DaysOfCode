@@ -2,7 +2,7 @@ const startButton = document.querySelector('#start-btn');
 const pauseButton = document.querySelector('#pause-btn');
 const resetButton = document.querySelector('#reset-btn');
 const display = document.querySelector('#display');
-display.textContent ='00:00:00:000';
+display.textContent = '00:00:00:000';
 let timer;
 let start;
 
@@ -28,13 +28,17 @@ function StartTime() {
     timer = setInterval(setTime, 1);
 }
 
+
 function pauseTime() {
+    // let currentTime;
 
     if (timer !== null) {
         clearInterval(timer);
+        // currentTime = timer;
         timer = null;
-    }else {
+    } else {
         timer = setInterval(setTime, 1);
+
     }
 }
 

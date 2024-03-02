@@ -5,6 +5,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #fdcaad;
 
     .chronometer {
         display: flex;
@@ -14,14 +15,16 @@ body {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 600px;
+            width: 650px;
             height: 200px;
             font-size: 110px;
-            color: #000;
+            color: #344955;
+            border-radius:10px ;
+        ;
         }
 
         .buttons {
-            margin-top: 30px;
+            margin-top: 50PX;
             display: flex;
             justify-content: space-between;
 
@@ -32,7 +35,7 @@ body {
                 border-radius: 10px;
                 font-size: 22px;
                 color: white;
-                background-color: royalblue;
+                background-color: #344955;
                 cursor: pointer;
 
             }
