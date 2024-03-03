@@ -1,0 +1,119 @@
+body {
+    height: 100vh;
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+
+    #cube {
+        transform-style: preserve-3d;
+        position: relative;
+        width: 500px;
+        height: 500px;
+        /*perspective: 1500px;*/
+        transform: rotateX(-10deg) rotateY(-10deg);
+        transition: transform .8s;
+
+        .pages {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 90px;
+            backface-visibility: inherit;
+        }
+
+        .front {
+            background-color: rgba(116, 140, 215, 0.7);
+            transform: translateZ(250px);
+        }
+
+        .back {
+            background-color: rgba(255, 182, 193, 0.7);
+            transform: rotateY(180deg) translateZ(250px);
+        }
+
+        .right {
+            background-color: rgba(204, 108, 108, 0.7);
+            transform: rotateY(90deg) translateZ(250px);
+        }
+
+        .left {
+            transform: translateX(-50%) rotateY(-90deg);
+            background-color: rgba(101, 151, 101, 0.7);
+        }
+
+        .top {
+            background-color: rgba(180, 160, 222, 0.7);
+            transform: rotateX(90deg) translateZ(250px);
+        }
+
+        .bottom {
+            transform: translateY(50%) rotateX(-90deg);
+            background-color: rgba(236, 214, 119, 0.7);
+        }
+
+    }
+
+    #options {
+        margin-top: 150px;
+        display: flex;
+
+        label {
+            display: flex;
+            align-items: center;
+
+            &:not(:last-child) {
+                margin-right: 30px;
+            }
+
+            input {
+                display: none;
+
+            }
+
+            .checkbox {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 20px;
+                height: 20px;
+                border: 1px solid #8e8e8e;
+                border-radius: 50%;
+
+                svg {
+                    width: 20px;
+                    height: 15px;
+                    display: none;
+                    fill: white;
+                }
+
+
+            }
+
+            .label {
+                font-size: 22px;
+                margin-left: 5px;
+            }
+
+            input:checked + .checkbox {
+                background-color: #ca3333;
+            }
+
+            input:checked + .checkbox svg {
+                display: block;
+            }
+        }
+
+
+    }
+}
+
+
+

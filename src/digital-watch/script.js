@@ -7,8 +7,11 @@ function setTime() {
     let second = time.getSeconds();
 
 
+    hour = hour.toString().padStart(2, '0');
+    minute = minute.toString().padStart(2, '0');
+    second = second.toString().padStart(2, '0');
 
-    watch.textContent = hour + ':' + minute+ ':' + second;
+    watch.textContent = hour + ':' + minute + ':' + second;
 
 }
 
