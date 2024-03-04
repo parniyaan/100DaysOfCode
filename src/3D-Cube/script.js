@@ -1,5 +1,3 @@
-
-
 const radioInputs = document.querySelectorAll('input[type=radio]');
 const cube = document.querySelector('#cube');
 

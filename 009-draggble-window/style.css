@@ -1,0 +1,23 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    box-sizing: border-box;
+    margin: 0;
+
+    .window {
+        width: 500px;
+        height: 400px;
+        background-color: #454444;
+        border-radius: 20px;
+        overflow: hidden;
+        position: absolute;
+        
+        .header {
+            height: 35px;
+            background-color: #545454;
+            cursor: grab;
+        }
+    }
+}
