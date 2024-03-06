@@ -1,0 +1,51 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Noto Sans CJK HK", sans-serif;
+
+    .calender {
+        width: 700px;
+        height: 600px;
+
+        .month {
+            display: flex;
+            align-items: center;
+            font-size: 50px;
+            height: 100px;
+            color: white;
+            padding: 0 15px;
+            background-color: #408080;
+            border-radius: 20px;
+        }
+
+        .dates {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+            grid-row-gap: 20px;
+            font-size: 45px;
+
+            .day {
+                color: #408080;
+            }
+
+            span {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 10px;
+            }
+        }
+
+
+        .today {
+            background-color: #408080;
+            color: white;
+        }
+    }
+}
