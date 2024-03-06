@@ -1,11 +1,11 @@
 const dates = document.querySelector('.dates');
 
-let date = new Date();
-let year = date.getFullYear();
-let month = date.getMonth();
+let year =new Date().getFullYear();
+let month = new Date().getMonth();
 let today = new Date().getDate();
 let firstDate = new Date(year, month, 1).getDay();
 let lastDate = new Date(year, month + 1, 0).getDate();
+console.log(firstDate);
 
 
 for (let i = 0;i < firstDate;i++) {
