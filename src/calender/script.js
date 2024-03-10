@@ -1,12 +1,15 @@
 const dates = document.querySelector('.dates');
+const thisMonth = document.querySelector('.month');
 
-let year =new Date().getFullYear();
-let month = new Date().getMonth();
+let date = new Date();
+let year =date.getFullYear();
+let month = date.getMonth();
 let today = new Date().getDate();
+let monthName = date.toLocaleString('default', { month: 'long' });
 let firstDate = new Date(year, month, 1).getDay();
 let lastDate = new Date(year, month + 1, 0).getDate();
-console.log(firstDate);
 
+thisMonth.textContent = ` ${monthName} ${year}`;
 
 for (let i = 0;i < firstDate;i++) {
     let spaces = document.createElement('span');
