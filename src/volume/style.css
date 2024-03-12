@@ -1,0 +1,137 @@
+body {
+    margin: 0;
+    box-sizing: border-box;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+main {
+    display: flex;
+    align-items: center;
+    /*border: 2px solid blue;*/
+}
+
+
+.volume-icon {
+    width: 35px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    /*border: 2px solid red;*/
+}
+
+
+.volume-icon .left {
+    display: flex;
+    width: 20px;
+    height: 20px;
+    background-color: #686767;
+
+}
+
+.volume-icon .right {
+    display: block;
+    width: 0;
+    height: 0;
+    border: 20px solid transparent;
+    border-top: 0;
+    border-bottom: 30px solid #686767;
+    transform: rotateZ(270deg);
+    position: absolute;
+    left: -5%;
+    top: -25%;
+}
+
+main .loud {
+    width: 70px;
+}
+
+
+.volume-icon .low-noise {
+    position: absolute;
+    border: 5px solid #686767;
+    width: 5px;
+    height: 5px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-left: 0;
+    left: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.volume-icon .loud-noise {
+    position: absolute;
+    border: 5px solid #686767;
+    width: 10px;
+    height: 20px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-left: 0;
+    left: 55%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.range {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    height: 20px;
+    /*border: 3px solid black;*/
+}
+
+.range .filed {
+    position: relative;
+    width: 450px;
+    height: 15px;
+    border-radius: 20px;
+    background-color: #bcbcbc;
+}
+
+.range .filed .full {
+    background-color: darkred;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 15px;
+    border-radius: 20px;
+    width: 40%;
+}
+
+.range button {
+    position: absolute;
+    background-color: darkred;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    left: 40%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    cursor: grab;
+    z-index: 1000;
+}
+
+
+.number-volume {
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: darkred;
+    position: absolute;
+    top: 0;
+    transform: translateX(-50%);
+    padding-top: 10px;
+}
