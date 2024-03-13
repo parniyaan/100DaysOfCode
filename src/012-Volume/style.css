@@ -5,16 +5,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-
-
 }
 
 main {
     display: flex;
     align-items: center;
-    /*border: 2px solid blue;*/
 }
-
 
 .volume-icon {
     width: 35px;
@@ -22,16 +18,13 @@ main {
     display: flex;
     align-items: center;
     position: relative;
-    /*border: 2px solid red;*/
 }
-
 
 .volume-icon .left {
     display: flex;
     width: 20px;
     height: 20px;
     background-color: #686767;
-
 }
 
 .volume-icon .right {
@@ -50,7 +43,6 @@ main {
 main .loud {
     width: 70px;
 }
-
 
 .volume-icon .low-noise {
     position: absolute;
@@ -83,20 +75,14 @@ main .loud {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 500px;
-    height: 20px;
-    /*border: 3px solid black;*/
-}
-
-.range .filed {
-    position: relative;
     width: 450px;
     height: 15px;
     border-radius: 20px;
     background-color: #bcbcbc;
+    margin: 0 30px;
 }
 
-.range .filed .full {
+.range .full {
     background-color: darkred;
     position: absolute;
     left: 0;
@@ -117,13 +103,10 @@ main .loud {
     transform: translate(-50%, -50%);
     border: none;
     cursor: grab;
-    z-index: 1000;
 }
 
 
-.number-volume {
-    width: 50px;
-    height: 50px;
+.range .number-volume {
     font-size: 18px;
     font-weight: bold;
     display: flex;
@@ -132,6 +115,6 @@ main .loud {
     color: darkred;
     position: absolute;
     top: 0;
-    transform: translateX(-50%);
-    padding-top: 10px;
+    margin-top: 30px;
+    transform: translateX(-160%);
 }
