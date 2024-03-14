@@ -24,14 +24,12 @@ function mouseMoveHandler(event) {
         let fullPiece = mouseX - rangePosition.left;
         let percent = ((fullPiece / rangePosition.width) * 100) + '%';
 
-        if (fullPiece >= 0 && fullPiece <= rangePosition.width) {
-            full.style.width = percent;
-            button.style.left = percent;
+        full.style.width = percent;
+        button.style.left = percent;
 
-            volumeRange.textContent = Math.floor(fullPiece * coefficient);
-            volumeRange.style.left = percent;
-            volumeRange.style.transform = 'translateX(-50%)';
-        }
+        volumeRange.textContent = Math.floor(fullPiece * coefficient);
+        volumeRange.style.left = percent;
+        volumeRange.style.transform = 'translateX(-50%)';
     }
 }
 
