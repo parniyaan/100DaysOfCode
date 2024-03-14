@@ -3,7 +3,7 @@ const range = document.querySelector('.range');
 const full = document.querySelector('.full');
 const volumeRange = document.querySelector('.number-volume');
 
-const maxVolume = 256;
+const maxVolume = 255;
 let isClicked = false;
 
 volumeRange.textContent = Math.floor(maxVolume * 40 / 100);
@@ -15,9 +15,9 @@ function mouseDownHandler() {
 
 function mouseMoveHandler(event) {
     const rangePosition = range.getBoundingClientRect();
-    // const colorPosition = full.getBoundingClientRect();
-    // const buttonPosition = button.getBoundingClientRect();
     let mouseX = event.clientX;
+    mouseX = Math.max(rangePosition.left, Math.min(mouseX, rangePosition.right));
+
     let coefficient = maxVolume / rangePosition.width;
 
     if (isClicked) {
