@@ -28,7 +28,7 @@ function startPainting(event) {
 function painting(event) {
     if (isPainting) {
         tas.lineTo(event.clientX, event.clientY-bordSize.height);
-        tas.lineWidth= '2';
+        tas.lineWidth= '1';
         tas.lineCap = 'round';
         tas.lineJoin = 'round';
         tas.stroke();
