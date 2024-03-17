@@ -22,12 +22,12 @@ canvas.height = window.innerHeight - bordSize.height;
 function startPainting(event) {
     isPainting = true;
     tas.beginPath();
-    tas.moveTo(event.clientX, event.clientY-55);
+    tas.moveTo(event.clientX, event.clientY-bordSize.height);
 }
 
 function painting(event) {
     if (isPainting) {
-        tas.lineTo(event.clientX, event.clientY-55);
+        tas.lineTo(event.clientX, event.clientY-bordSize.height);
         tas.lineWidth= '2';
         tas.lineCap = 'round';
         tas.lineJoin = 'round';
