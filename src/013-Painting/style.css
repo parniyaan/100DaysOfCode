@@ -27,6 +27,11 @@ body {
                 &:not(:last-child) {
                     margin-right: 10px;
                 }
+
+                &:hover {
+                    width: 30px;
+                    height: 30px;
+                }
             }
 
             #black { background-color: black;}
@@ -54,11 +59,18 @@ body {
             .save {
                 margin-right: 10px;
                 background-color: #00fa9a;
+
+                &:active {
+                    background-color: #02d081;
+                }
             }
 
             .clear {
                 background-color: royalblue;
 
+                &:active {
+                    background-color: #395dc8;
+                }
             }
         }
     }
