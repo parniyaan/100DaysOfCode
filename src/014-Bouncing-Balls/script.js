@@ -4,46 +4,62 @@ const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-let radius = 25;
-let xSpeed = 5;
-let ySpeed = 10;
+let width = [-5, 5];
+let height = [-10, 10];
 
-let ball = [];
+let balls = [];
 
-for (let i = 0; i < 20; i++) {
+let letters = 'ABCDEF0123456789';
+
+function getRandomColor () {
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+        let codes = letters[Math.floor(Math.random() * letters.length)];
+        color += codes;
+    }
+    return color;
+}
+
+for (let i = 0; i < 30; i++) {
     let properties = {
         x: Math.floor(Math.random() * canvas.width),
         y: Math.floor(Math.random() * canvas.width),
+        xSpeed: width[Math.floor(Math.random() * width.length)],
+        ySpeed: height[Math.floor(Math.random() * height.length)],
+        radius: 25,
+        color:getRandomColor()
     };
 
-    ball.push(properties);
+    balls.push(properties);
 }
 
 function bouncing() {
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    for (let item of ball) {
-        let x = item.x;
-        let y = item.y;
+    for (let ball of balls) {
+
         ctx.beginPath();
-        ctx.arc(x, y, radius, 0, 2 * Math.PI);
+        ctx.arc(ball.x, ball.y, ball.radius, 0, 2 * Math.PI);
         ctx.closePath();
-        ctx.fillStyle = 'white';
+        ctx.fillStyle = ball.color;
         ctx.fill();
 
-        x = x + xSpeed;
-        y = y + ySpeed;
+        ball.y += ball.ySpeed;
+        ball.x += ball.xSpeed;
 
-        if (x + radius >= canvas.width || x - radius <= 0) {
-            xSpeed = -xSpeed;
+        if (ball.x + ball.radius >= canvas.width || ball.x - ball.radius <= 0) {
+            ball.xSpeed = -ball.xSpeed;
         }
 
-        if (y + radius >= canvas.height || y - radius <= 0) {
-            ySpeed = -ySpeed;
+        if (ball.y + ball.radius >= canvas.height || ball.y - ball.radius <= 0) {
+            ball.ySpeed = -ball.ySpeed;
         }
 
     }
 }
 
 setInterval(bouncing, 10);
+
+
+
