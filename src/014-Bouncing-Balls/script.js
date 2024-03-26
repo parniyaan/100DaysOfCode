@@ -9,27 +9,14 @@ let height = [-10, 10];
 
 let balls = [];
 
-let letters = 'ABCDEF0123456789';
-
-function getRandomColor () {
-    let color = '#';
-    for (let i = 0; i < 6; i++) {
-        let codes = letters[Math.floor(Math.random() * letters.length)];
-        color += codes;
-    }
-    return color;
-}
-
-for (let i = 0; i < 30; i++) {
+for (let i = 0; i < 500; i++) {
     let properties = {
         x: Math.floor(Math.random() * canvas.width),
         y: Math.floor(Math.random() * canvas.width),
         xSpeed: width[Math.floor(Math.random() * width.length)],
         ySpeed: height[Math.floor(Math.random() * height.length)],
-        radius: 25,
-        color:getRandomColor()
+        radius: Math.floor(Math.random() * 3 + 1),
     };
-
     balls.push(properties);
 }
 
@@ -42,7 +29,7 @@ function bouncing() {
         ctx.beginPath();
         ctx.arc(ball.x, ball.y, ball.radius, 0, 2 * Math.PI);
         ctx.closePath();
-        ctx.fillStyle = ball.color;
+        ctx.fillStyle = 'white';
         ctx.fill();
 
         ball.y += ball.ySpeed;
@@ -59,7 +46,7 @@ function bouncing() {
     }
 }
 
-setInterval(bouncing, 10);
+setInterval(bouncing, 80);
 
 
 
