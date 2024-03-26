@@ -20,17 +20,35 @@ for (let i = 0; i < 500; i++) {
     balls.push(properties);
 }
 
+
 function bouncing() {
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     for (let ball of balls) {
+        for (let otherBalls of balls) {
+            if(ball !== otherBalls) {
+                let xSpace = ball.x - otherBalls.x;
+                let ySpace = ball.y - otherBalls.y;
+
+                if (xSpace <= 100 || ySpace <= 100) {
+                    ctx.beginPath();
+                    ctx.moveTo(ball.x, ball.y);
+                    ctx.lineTo(otherBalls.x, otherBalls.y);
+                    ctx.strokeStyle = 'white';
+                    ctx.lineWidth = '.3';
+                    ctx.stroke();
+                    ctx.closePath();
+                }
+            }
+        }
 
         ctx.beginPath();
         ctx.arc(ball.x, ball.y, ball.radius, 0, 2 * Math.PI);
         ctx.closePath();
         ctx.fillStyle = 'white';
         ctx.fill();
+        ctx.closePath();
 
         ball.y += ball.ySpeed;
         ball.x += ball.xSpeed;
