@@ -27,11 +27,13 @@ function bouncing() {
 
     for (let ball of balls) {
         for (let otherBalls of balls) {
-            if(ball !== otherBalls) {
+            if (ball !== otherBalls) {
                 let xSpace = ball.x - otherBalls.x;
                 let ySpace = ball.y - otherBalls.y;
 
-                if (xSpace <= 100 || ySpace <= 100) {
+                let space = Math.sqrt(xSpace*xSpace + ySpace*ySpace);
+
+                if (space <= 100) {
                     ctx.beginPath();
                     ctx.moveTo(ball.x, ball.y);
                     ctx.lineTo(otherBalls.x, otherBalls.y);
