@@ -44,7 +44,7 @@ function mouseMove(event) {
                         ctx.strokeStyle = 'white';
                         ctx.lineWidth = '.1';
                         ctx.stroke();
-                        ctx.closePath();
+                        ctx.closePath();    
                     }
                 }
             }
