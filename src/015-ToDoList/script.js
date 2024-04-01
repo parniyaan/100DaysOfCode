@@ -2,6 +2,9 @@ const list = document.querySelector('ul');
 const input = document.querySelector('#input');
 const addBtn = document.querySelector('button');
 
+let tasks = [];
+console.log(tasks);
+
 function addBtnHandler() {
     if (input.value === '') {
         alert('please Enter your task');
@@ -29,38 +32,53 @@ function addBtnHandler() {
 
         input.value = '';
 
-        let checkBox = task.querySelector('.checkbox');
-        const check = task.querySelector('#check');
-        const deleteBtn = task.querySelector('.delete-icon');
-        function taskDone(e) {
-            if (e.target.checked) {
-                label.style.textDecoration = 'line-through';
-                checkBox.style.display = 'none';
+        tasks.push(task.innerHTML);
 
-                saveData();
-            }
-        }
-        function deleteBtnHandler() {
-            task.remove();
-            saveData();
-        }
-
-        deleteBtn.addEventListener('click', deleteBtnHandler);
-        check.addEventListener('input', taskDone);
     }
 
     saveData();
 }
 
+function taskDone(e) {
+    const label = e.target.closest('li').querySelector('.label');
+
+    if (e.target.checked) {
+        label.style.textDecoration = 'line-through';
+    } else {
+        label.style.textDecoration = 'none';
+    }
+    saveData();
+}
+
+
+function deleteBtnHandler(e) {
+    if (e.target.classList.contains('delete-icon')) {
+        e.target.parentNode.remove();
+        saveData();
+    }
+}
+
 function saveData() {
-    localStorage.setItem('tasks', list.innerHTML);
+    localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
 function showData() {
-    list.innerHTML = localStorage.getItem('tasks');
+    const storedTasks = JSON.parse(localStorage.getItem('tasks'));
+    console.log(storedTasks);
+    if (storedTasks) {
+        tasks = storedTasks;
+        tasks.forEach(task => {
+            let listItem = document.createElement('li');
+            listItem.innerHTML = task;
+            list.appendChild(listItem);
+        });
+    }
 }
 
 showData();
 
+list.addEventListener('input', taskDone);
 addBtn.addEventListener('click', addBtnHandler);
+list.addEventListener('click', deleteBtnHandler);
 
+// localStorage.clear();
