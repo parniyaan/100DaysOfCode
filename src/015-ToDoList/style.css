@@ -24,11 +24,12 @@ body {
                 margin-right: 10px;
             }
 
-            img{
-                width:40px;
+            img {
+                width: 40px;
                 height: 40px;
             }
         }
+
         .text-field {
             width: 500px;
             background-color: #edecec;
@@ -113,17 +114,21 @@ body {
                         display: block;
                         fill: white;
                     }
+
+                    input:checked + .checkbox ~ .label {
+                        text-decoration: line-through;
+                    }
                 }
 
                 .delete-icon {
                     width: 15px;
                     height: 15px;
+                    background-image: url("./icons/xmark-large-sharp-light.svg");
+                    background-repeat: no-repeat    ;
                     fill: grey;
                     cursor: pointer;
-
                 }
             }
         }
-
     }
 }
