@@ -6,14 +6,13 @@ let datas = [];
 
 function addTask(title) {
     let task = {
-        id: Date.now(),
         title,
         checked: false
     };
     datas.push(task);
 }
 
-function addTaskHandler() {
+function addBtnHandler() {
     if (input.value) {
         addTask(input.value);
         saveData();
@@ -94,7 +93,7 @@ function checkTask(e) {
     renderTask();    
 }
 
-addBtn.addEventListener('click', addTaskHandler);
+addBtn.addEventListener('click', addBtnHandler);
 
 loadData();
 renderTask();
