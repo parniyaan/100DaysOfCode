@@ -1,0 +1,95 @@
+body {
+    margin: 0;
+    box-sizing: border-box;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #083A30;
+
+    .game {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #10604F;
+        width: 600px;
+        border-radius: 20px;
+        box-shadow: 20px 20px 30px #02211b;
+
+        h1 {
+            color: white;
+            letter-spacing: 3px;
+            font-size: 40px;
+        }
+
+        .cards {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(4, 110px);
+            grid-template-rows: repeat(4, 110px);
+            gap: 15px;
+            transform-style: preserve-3d;
+            perspective: 500px;
+
+
+            .card {
+                display: flex;
+                position: relative;
+                align-items: center;
+                justify-content: center;
+                background-color: #fff;
+                font-size: 45px;
+                border-radius: 15px;
+                transform: rotateY(180deg);
+                transition: .5s all;
+                overflow: hidden;
+                cursor: pointer;
+            }
+
+            .boxOpen {
+                transform: rotateY(0);
+            }
+
+            .card:after {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background-color: #219B7C;
+                transition: .5s;
+                transform: rotateY(0);
+                backface-visibility: hidden;
+            }
+
+            .boxOpen:after {
+                transform: rotateY(180deg);
+            }
+
+            .delete {
+                transform: rotateY(0) scale(0);
+            }
+
+            .win {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                font-size: 70px;
+                color: white;
+                width: 260px;
+                transform: translate(-50%,-50%);
+            }
+
+        }
+
+        button {
+            width: 150px;
+            height: 50px;
+            border-radius: 10px;
+            color: #10604F;
+            border: none;
+            font-size: 16px;
+            margin: 20px 0;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    }
+}
