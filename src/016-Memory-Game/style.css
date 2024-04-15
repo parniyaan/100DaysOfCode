@@ -58,6 +58,7 @@ body {
                 transition: .5s;
                 transform: rotateY(0);
                 backface-visibility: hidden;
+                opacity: .5;
             }
 
             .boxOpen:after {
