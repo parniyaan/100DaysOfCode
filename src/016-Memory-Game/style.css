@@ -44,6 +44,7 @@ body {
                 transition: .5s all;
                 overflow: hidden;
                 cursor: pointer;
+
             }
 
             .boxOpen {
@@ -58,7 +59,6 @@ body {
                 transition: .5s;
                 transform: rotateY(0);
                 backface-visibility: hidden;
-                opacity: .5;
             }
 
             .boxOpen:after {

@@ -181,7 +181,6 @@ function checkWin() {
 
 function randomData() {
     return JSON.parse(JSON.stringify(mainData.sort(() => Math.random() - 0.5)));
-    // return mainData.sort(() => Math.random() - 0.5);
 }
 
 function resetGame() {
