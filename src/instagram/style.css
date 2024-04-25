@@ -71,6 +71,7 @@ body {
                         display: flex;
                         align-items: center;
                         justify-content: center;
+                        flex-shrink: 0;
                         width: 86px;
                         height: 86px;
                         border-radius: 50%;
@@ -159,10 +160,6 @@ body {
                         }
                     }
 
-                    h4 {
-                        /*font-weight: ;*/
-                    }
-
                     p {
                         font-size: 14px;
                         letter-spacing: 1px;
@@ -210,7 +207,3 @@ body {
         margin: 5px 0;
     }
 }
-
-/*@keyframes  {*/
-/*    */
-/*}*/
