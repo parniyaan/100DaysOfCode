@@ -54,35 +54,39 @@ body {
                 display: none;
             }
 
-            .stories {
-                display: flex;
-                align-items: center;
-                scroll-snap-align: start;
-                overflow-x: scroll;
-                scroll-snap-type: x mandatory;
+            .wrapper {
 
-                &::-webkit-scrollbar {
-                    display: none;
-                }
-
-                .border {
+                .stories {
                     display: flex;
                     align-items: center;
-                    justify-content: center;
-                    width: 86px;
-                    height: 86px;
-                    border-radius: 50%;
-                    background: conic-gradient(#833AB4, #C13584, #FD1D1D, #FED522, #FD1D1D, #C13584);
-                    scroll-snap-align: center;
-                    margin-left: 5px;
+                    scroll-snap-align: start;
+                    overflow-x: scroll;
+                    scroll-snap-type: x mandatory;
 
-                    img {
-                        width: 80px;
-                        height: 80px;
+                    &::-webkit-scrollbar {
+                        display: none;
+                    }
+
+                    .border {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 86px;
+                        height: 86px;
                         border-radius: 50%;
-                        object-fit: cover;
-                        object-position: center;
-                        cursor: pointer;
+                        background: conic-gradient(#833AB4, #C13584, #FD1D1D, #FED522, #FD1D1D, #C13584);
+                        scroll-snap-align: center;
+                        margin-left: 10px;
+
+
+                        img {
+                            width: 80px;
+                            height: 80px;
+                            border-radius: 50%;
+                            object-fit: cover;
+                            object-position: center;
+                            cursor: pointer;
+                        }
                     }
                 }
             }
@@ -95,7 +99,7 @@ body {
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    padding: 10px 5px;
+                    padding: 10px ;
 
                     .name {
                         display: flex;
