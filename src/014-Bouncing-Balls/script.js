@@ -24,10 +24,10 @@ function mouseMove(event) {
     let mouseX = event.clientX;
     let mouseY = event.clientY;
 
-    let mouseAreaXRight = mouseX + 300;
-    let mouseAreaYBottom = mouseY + 300;
-    let mouseAreaLeft = mouseX - 300;
-    let mouseAreaYTop = mouseY - 300;
+    let mouseAreaXRight = mouseX + 100;
+    let mouseAreaYBottom = mouseY + 100;
+    let mouseAreaLeft = mouseX - 100;
+    let mouseAreaYTop = mouseY - 100;
 
     for (let ball of balls) {
         for (let otherBalls of balls) {

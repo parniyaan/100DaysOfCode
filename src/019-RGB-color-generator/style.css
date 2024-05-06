@@ -1,0 +1,97 @@
+body {
+    margin: 0;
+    box-sizing: border-box;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Noto Sans CJK HK",sans-serif;
+    background-image: url("./images/codioful-formerly-gradienta-O10vBIDRkZw-unsplash.jpg");
+    /*background-repeat: no-repeat;*/
+    background-size: cover;
+    object-fit: contain;
+    object-position: center;
+
+
+    .generator {
+        background-color: #fff;
+        border-radius: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px;
+
+        .color {
+            width: 250px;
+            height: 150px;
+            border-radius: 20px;
+        }
+
+        .color-code {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 40px;
+            margin-top: 40px;
+            border: 1px solid #545454;
+            font-size: 20px;
+            padding: 5px;
+            border-radius: 20px;
+
+        }
+
+        .rgb {
+            --buttonColor :rgb(128,128,128);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 30px;
+
+            label {
+                font-size: 20px;
+                margin-bottom: 20px;
+                font-weight: bold;
+                letter-spacing: 1px;
+            }
+
+            input {
+                --ColorRed: linear-gradient(to right, rgb(0, 0, 0), rgb(255, 0, 0));
+                --ColorGreen: linear-gradient(to right, rgb(0, 0, 0), rgb(0, 255, 0));
+                --ColorBlue: linear-gradient(to right, rgb(0, 0, 0), rgb(0, 0, 255));
+                margin-bottom: 30px;
+                width: 300px;
+                appearance: none;
+
+                &::-webkit-slider-thumb {
+                    appearance: none;
+                    margin-top: -5px;
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    background-color: var(--buttonColor);
+                    cursor: pointer;
+                }
+
+                &#red::-webkit-slider-runnable-track {
+                    background: var(--ColorRed);
+                    border-radius: 20px;
+                    height: 10px;
+                }
+
+                &#green::-webkit-slider-runnable-track {
+                    background: var(--ColorGreen);
+                    border-radius: 20px;
+                    height: 10px;
+                }
+
+                &#blue::-webkit-slider-runnable-track {
+                    background: var(--ColorBlue);
+                    border-radius: 20px;
+                    height: 10px;
+                }
+
+
+            }
+        }
+    }
+}
