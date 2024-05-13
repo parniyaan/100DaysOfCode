@@ -1,29 +1,31 @@
 body {
     margin: 0;
     box-sizing: border-box;
-    background-color: #121212;
     padding: 0 30px;
     font-family: "Noto Sans CJK HK", SansSerif;
-    --mainColor: #fa6f02;
     --textColor: #848484;
+    --backColor: #121212;
+    --boxColor: #1b1b1b;
+    --mainColor: #8592fa;
+    --shadowBoxColor: black;
+    background-color: var(--backColor);
 
     header {
         position: fixed;
         width: 100%;
-        /*border: 1px solid white;*/
         top: 0;
         left: 0;
         height: 70px;
-        /*margin-top: 15px;*/
         color: var(--textColor);
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: #121212;
-        /*padding-right: 80px;*/
+        background-color: var(--backColor);
 
         img {
-            height: 70px;
+            height: 60px;
+            border-radius: 80px;
+            margin: 20px 0 0 20px;
         }
 
         ul {
@@ -38,16 +40,44 @@ body {
                 &:not(:last-child) {
                     margin-right: 80px;
                 }
-
-                /*&:hover {*/
-                /*    color: var(--mainColor);*/
-                /*}*/
-
-                .orange {
-                    color: var(--mainColor);
-
-                }
             }
+
+            .orange {
+                color: var(--mainColor)
+            }
+        }
+
+        .mode {
+            width: 40px;
+            height: 40px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 20px;
+
+            &:hover {
+                background-color: var(--boxColor);
+
+            }
+
+
+            .icons {
+                width: 30px;
+                height: 30px;
+                fill: white;
+
+            }
+
+
+        }
+
+        .light {
+            display: flex;
+
+        }
+
+        .dark {
+            display: none;
         }
     }
 
@@ -102,206 +132,206 @@ body {
                     }
                 }
 
-                .buttons {
+                .resume {
                     margin-bottom: 60px;
 
-                    a {
-                        .cv {
-                            background-color: transparent;
-                            color: var(--textColor);
-                            border-radius: 5px;
-                            border: 1px solid var(--textColor);
-                            height: 35px;
-                            width: 170px;
-                            cursor: pointer;
-                        }
-                    }
-                }
-
-                .details {
-                    display: flex;
-                    align-items: center;
-                    height: 70px;
-                    background-color: #1b1b1b;
-                    border-radius: 5px;
-
-                    .detail {
-                        display: flex;
-                        height: 45px;
-                        width: 105px;
-                        flex-direction: column;
-                        padding: 0 15px;
-
-                        &:not(:last-child) {
-                            border-right: 2px solid var(--textColor);
-                            /*margin-right: 15px;*/
-                        }
-
-                        .value {
-                            margin-bottom: 10px;
-                            color: var(--mainColor);
-                            font-weight: bold;
-                        }
-
-                        .detail-name {
-                            color: white;
-                        }
-                    }
-                }
-            }
-
-            img {
-                width: 700px;
-                height: 800px;
-            }
-        }
-
-        #services {
-            display: flex;
-            flex-direction: column;
-
-            .options {
-                display: grid;
-                grid-template-rows: repeat(2, 1fr);
-                grid-template-columns: repeat(3, 1fr);
-                grid-gap: 40px;
-                margin-top: 50px;
-
-                .option {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    padding: 30px 40px;
-                    border-radius: 10px;
-                    background-color: #1b1b1b;
-
-
-                    svg {
-                        width: 45px;
-                        height: 45px;
-                        fill: var(--mainColor);
-
-                    }
-
-                    h3 {
-                        color: var(--mainColor);
-                        margin: 15px 0;
-                    }
-
-                    p {
-                        font-size: 12px;
+                    .cv {
+                        background-color: transparent;
                         color: var(--textColor);
-                        line-height: 20px;
-                    }
-                }
-            }
-        }
-
-        .about-me {
-            display: flex;
-            flex-direction: column;
-            margin-top: 150px;
-
-            .description {
-                margin-top: 50px;
-                display: flex;
-                align-items: center;
-
-
-                .my-image {
-                    margin-right: 100px;
-                }
-
-                .bio {
-
-                    p {
-                        font-size: 18px;
-                        width: 90%;
-                        line-height: 40px;
-                        color: var(--textColor);
-                        letter-spacing: 1px;
-                        margin-bottom: 40px;
-                    }
-
-                    button {
-                        background-color: var(--mainColor);
-                        width: 200px;
-                        height: 50px;
-                        color: white;
-                        border: none;
-                        font-size: 16px;
                         border-radius: 5px;
+                        border: 1px solid var(--textColor);
+                        height: 35px;
+                        padding: 5px 10px;
+                        font-size: 14px;
+                        /*width: 200px;*/
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .details {
+                display: flex;
+                align-items: center;
+                height: 70px;
+                background-color: var(--boxColor);
+                border-radius: 5px;
+
+                .detail {
+                    display: flex;
+                    height: 45px;
+                    width: 105px;
+                    flex-direction: column;
+                    padding: 0 15px;
+
+                    &:not(:last-child) {
+                        border-right: 2px solid var(--backColor);
                     }
 
+                    .value {
+                        margin-bottom: 10px;
+                        color: var(--mainColor);
+                        font-weight: bold;
+                    }
+
+                    .detail-name {
+                        color: var(--textColor);
+                    }
                 }
             }
         }
 
-        #circles {
-            display: flex;
-            justify-content: space-evenly;
-            margin-top: 80px;
+        img {
+            width: 700px;
+            height: 800px;
+        }
+    }
 
-            .circle {
-                /*border: 1px solid white;*/
-                width: 180px;
+    #services {
+        display: flex;
+        flex-direction: column;
+
+        .options {
+            display: grid;
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 40px;
+            margin-top: 50px;
+
+            .option {
                 display: flex;
-                align-items: center;
                 flex-direction: column;
+                align-items: center;
+                padding: 30px 40px;
+                border-radius: 10px;
+                background-color: var(--boxColor);
+
 
                 svg {
-                    stroke-linecap: round;
-                    stroke-width: 8;
-                    fill: none;
+                    width: 45px;
+                    height: 45px;
+                    fill: var(--mainColor);
+
                 }
 
                 h3 {
                     color: var(--mainColor);
+                    margin: 15px 0;
                 }
 
-                h4 {
+                p {
+                    font-size: 12px;
                     color: var(--textColor);
-                    margin-top: 10px;
+                    line-height: 20px;
+                }
+            }
+        }
+    }
+
+    .about-me {
+        display: flex;
+        flex-direction: column;
+        margin-top: 150px;
+
+        .description {
+            margin-top: 50px;
+            display: flex;
+            align-items: center;
+
+
+            .my-image {
+                margin-right: 100px;
+            }
+
+            .bio {
+
+                p {
+                    font-size: 18px;
+                    width: 90%;
+                    line-height: 40px;
+                    color: var(--textColor);
+                    letter-spacing: 1px;
+                    margin-bottom: 40px;
                 }
 
+                button {
+                    background-color: var(--mainColor);
+                    width: 200px;
+                    height: 50px;
+                    color: white;
+                    border: none;
+                    font-size: 16px;
+                    border-radius: 5px;
+                }
 
             }
         }
+    }
 
-        #portfolio {
+    #circles {
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 80px;
+
+        .circle {
+            width: 180px;
             display: flex;
-            flex-direction: column;
             align-items: center;
-            margin-top: 100px;
+            flex-direction: column;
 
-            h1 {
-                color: white;
-                margin-bottom: 100px;
+            svg {
+                stroke-linecap: round;
+                stroke-width: 8;
+                fill: none;
             }
 
-            .projects {
-                display: grid;
-                grid-gap: 100px;
-                grid-template-columns: repeat(3, 1fr);
+            h3 {
+                color: var(--mainColor);
+            }
 
-                a {
-                    /*width: 200px;*/
-                    height: 350px;
-                    /*border: 1px solid white;*/
-                    border-radius: 20px;
-                    overflow: hidden;
-                    box-shadow: 20px 20px 50px black;
+            h4 {
+                color: var(--textColor);
+                margin-top: 10px;
+            }
 
-                    img{
-                        width: 300px;
-                        height: 300px;
-                        object-fit: contain;
-                    }
 
-                    h4{
-                        margin: 10px;
-                        color: var(--textColor);
-                    }
+        }
+    }
+
+    #portfolio {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 100px;
+
+        h1 {
+            color: var(--textColor);
+            margin-bottom: 100px;
+        }
+
+        .projects {
+            display: grid;
+            grid-gap: 120px;
+            grid-template-columns: repeat(3, 1fr);
+
+
+            a {
+                /*height: 350px;*/
+                border-radius: 20px;
+                overflow: hidden;
+                box-shadow: 15px 15px 50px var(--shadowBoxColor);
+
+                img {
+                    width: 350px;
+                    height: 300px;
+                    /*object-fit: contain;*/
+                }
+
+                h4 {
+                    margin: 10px;
+                    text-align: center;
+                    font-family: fantasy, SansSerif;
+                    color: var(--textColor);
+                    letter-spacing: 1px;
                 }
             }
         }
@@ -309,9 +339,11 @@ body {
 
 
     .hire-me {
-        width: 100px;
-        height: 35px;
-        margin-right: 50px;
+        /*width: 100px;*/
+        /*height: 35px;*/
+        margin-right: 10px;
+        padding: 5px 10px;
+        font-size: 14px;
         background-color: var(--mainColor);
         border: none;
         color: white;
@@ -321,7 +353,7 @@ body {
     }
 
     .title {
-        color: white;
+        color: var(--textColor);
         text-align: center;
         margin-bottom: 20px;
 
@@ -332,4 +364,5 @@ body {
         text-align: center;
         font-size: 14px;
     }
+
 }

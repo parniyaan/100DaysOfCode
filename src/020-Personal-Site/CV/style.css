@@ -1,0 +1,16 @@
+body{
+    margin: 0;
+    box-sizing: border-box;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #121212;
+
+    .cv {
+        padding: 50px;
+        background-color: #fff;
+        width: 500px;
+
+    }
+}
